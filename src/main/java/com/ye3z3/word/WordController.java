@@ -56,6 +56,11 @@ public class WordController {
         wordDAO.save(word);
         return ResponseEntity.ok().body(null);
     }
+    @RequestMapping(method = RequestMethod.DELETE, value = "{id}")
+    public ResponseEntity delete(@PathVariable("id")Integer id) {
+        wordDAO.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
     @RequestMapping("/search")
     public ResponseEntity search(@RequestParam String word) {
         List<Word> byWordd = wordDAO.findByWordd(word, Sort.by(Sort.Direction.DESC, "lastUpdatedTime"));
