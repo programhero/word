@@ -34,6 +34,10 @@ public class Word {
     @ExcelProperty("固搭")
     private String phrase;
     @Column
+    @ExcelProperty("释义")
+    @ColumnWidth(50)
+    private String interpretation;
+    @Column
     @ExcelProperty("示例")
     @ColumnWidth(50)
     private String example;
